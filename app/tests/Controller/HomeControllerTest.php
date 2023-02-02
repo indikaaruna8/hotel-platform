@@ -18,7 +18,7 @@ class HomeControllerTest extends WebTestCase
         $this->assertResponseHeaderSame('content-type', 'application/json');
         $response = $client->getResponse();
         $data = json_decode($response->getContent($response));
-        dd($data);
+
         foreach(RateData::get() as $r){
             $this->assertSame($r->rate, $data->{$r->name}->rate);
         }
