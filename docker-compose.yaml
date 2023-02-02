@@ -1,0 +1,40 @@
+version: '3.5'
+
+services:
+  web: 
+    image: bref/fpm-dev-gateway
+    ports: 
+       - '8100:80'
+    volumes:
+      - ./app:/var/task
+    depends_on:
+      - php
+      - db
+    environment: 
+      HANDLER: public/index.php
+      DOCUMENT_ROOT: public
+  php:
+    build: 
+      context: . 
+      dockerfile: ./php/Dockerfile
+    environment:
+      APP_ENV: dev
+      SYMFONY__DATABASE__HOST: db1
+      SYMFONY__DATABASE__PORT: 3306
+      SYMFONY__DATABASE__NAME: payroll_db
+      SYMFONY__DATABASE__USER: root
+      SYMFONY__DATABASE__PASSWORD: root
+    volumes:
+      - ./app:/var/task
+      - ./var:/var/task/var
+  db:
+    image: mysql:8.0.31
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: payroll_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql 
+volumes:
+  mysql-data:
