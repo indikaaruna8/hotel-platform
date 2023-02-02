@@ -20,10 +20,13 @@ jobs:
 
     - name: up mysql and apache container runs
       run: docker-compose up -d
-  
+      
     - name: Test ./exec command 
       run: ./exec 'php bin/console -V'
-
+  
+    - name: Test ./exec command 
+      run: ./exec 'echo "DB Name:" $SYMFONY__DATABASE__NAME'
+    
     - name: Migration tables
       run: ./exec 'bin/console doctrine:migrations:migrate'
 
