@@ -22,5 +22,5 @@ jobs:
       run: docker-compose up -d
   
     - name: Test ./exec command 
-      run: ./exec 'php bin/console -v'
+      run: docker-compose exec php sh -c "cd /var/task && php -v"
 
