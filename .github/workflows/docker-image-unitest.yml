@@ -23,10 +23,13 @@ jobs:
       
     - name: Test ./exec command 
       run: ./exec 'php bin/console -V'
-  
+   
     - name: Test ./exec command 
       run: ./exec 'echo "DB Name:" $SYMFONY__DATABASE__NAME'
     
+    - name : Create database 
+      run: ./exec 'bin/console doctrine:database:create'
+
     - name: Migration tables
       run: ./exec 'bin/console doctrine:migrations:migrate'
 
