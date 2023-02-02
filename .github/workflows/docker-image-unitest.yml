@@ -23,7 +23,11 @@ jobs:
       
     - name: Test ./exec command 
       run: ./exec 'php bin/console -V'
-   
+      
+    - name: Sleep for 30 seconds
+      run: sleep 30s
+      shell: bash
+
     - name: Test ./exec command 
       run: ./exec 'echo "DB Name:" $SYMFONY__DATABASE__NAME'
     
