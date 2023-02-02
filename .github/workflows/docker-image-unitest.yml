@@ -40,9 +40,9 @@ jobs:
     - name: Load test data
       run: ./exec 'yes|bin/console doctrine:fixtures:load'
     
-    - name: Sleep for 30 seconds
-      run: sleep 30s
-      shell: bash
+    # - name: Sleep for 30 seconds
+    #   run: sleep 30s
+    #   shell: bash
 
     - name: Execute the php unit
       run: ./exec 'bin/phpunit'
