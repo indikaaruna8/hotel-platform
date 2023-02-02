@@ -38,7 +38,7 @@ jobs:
       run: ./exec 'bin/console doctrine:migrations:migrate'
 
     - name: Load test data
-      run: ./exec 'bin/console doctrine:fixtures:load'
+      run: ./exec 'yes|bin/console doctrine:fixtures:load'
     
     - name: Sleep for 30 seconds
       run: sleep 30s
