@@ -22,5 +22,13 @@ jobs:
       run: docker-compose up -d
   
     - name: Test ./exec command 
-      run: docker-compose exec -T php sh -c "cd /var/task && php -v"
+      run: ./exec 'php bin/console -V'
 
+    - name: Migration tables
+      run: ./exec 'bin/console doctrine:migrations:migrate'
+
+    - name: Load test data
+      run: ./exec 'bin/console doctrine:fixtures:load'
+
+    - name: Execute the php unit
+      run: ./exec 'bin/phpunit'

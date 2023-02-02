@@ -1,2 +1,2 @@
 #!/bin/bash
-docker-compose exec php sh -c "cd /var/task && $@"
+docker-compose exec -T php sh -c "cd /var/task && $@"
