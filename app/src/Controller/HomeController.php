@@ -9,8 +9,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(): Respon
+    public function index(): Response
     {
-        return new Reseponse("<h1>Hello WorldM</h1>");
+        return new Response("<html><hader></header<body><h1>Hello World</h1></body></html>");
     }
 }
