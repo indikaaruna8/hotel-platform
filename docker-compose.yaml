@@ -19,22 +19,22 @@ services:
       dockerfile: ./php/Dockerfile
     environment:
       APP_ENV: dev
-      SYMFONY__DATABASE__HOST: db
-      SYMFONY__DATABASE__PORT: 3306
-      SYMFONY__DATABASE__NAME: payroll_db
-      SYMFONY__DATABASE__USER: root
-      SYMFONY__DATABASE__PASSWORD: root
+      HOTEL_DATABASE_HOST: db
+      HOTEL_DATABASE_PORT: 3306
+      HOTEL_DATABASE_NAME: hotel_db
+      HOTEL_DATABASE_USER: root
+      HOTEL_DATABASE_PASSWORD: hotel2be
     volumes:
       - ./app:/var/task
       - ./var:/var/task/var
   db:
     image: mysql:8.0.31
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: payroll_db
+      MYSQL_ROOT_PASSWORD: hotel2be
+      MYSQL_DATABASE: hotel_db
     ports:
       - "3308:3306"
     volumes:
-        - mysql-data-ut:/var/lib/mysql 
+        - mysql_hotel:/var/lib/mysql 
 volumes:
-  mysql-data-ut:
+  mysql_hotel:

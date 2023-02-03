@@ -3,7 +3,7 @@
 namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use App\DataFixtures\Data\RateData;
+use App\DataFixtures\Data\RoomData;
 
 class HomeControllerTest extends WebTestCase
 {
@@ -19,8 +19,8 @@ class HomeControllerTest extends WebTestCase
         $response = $client->getResponse();
         $data = json_decode($response->getContent($response));
 
-        foreach(RateData::get() as $r){
-            $this->assertSame($r->rate, $data->{$r->name}->rate);
+        foreach(RoomData::get() as $r){
+            $this->assertEquals($r->rent, $data->{$r->type}->rent);
         }
     }
 }

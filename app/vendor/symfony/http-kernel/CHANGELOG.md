@@ -221,7 +221,7 @@ CHANGELOG
  * added `kernel.project_dir` and `Kernel::getProjectDir()`
  * deprecated `kernel.root_dir` and `Kernel::getRootDir()`
  * deprecated `Kernel::getEnvParameters()`
- * deprecated the special `SYMFONY__` environment variables
+ * deprecated the special `HOTEL_` environment variables
  * added the possibility to change the query string parameter used by `UriSigner`
  * deprecated `LazyLoadingFragmentHandler::addRendererService()`
  * deprecated `Extension::addClassesToCompile()` and `Extension::getClassesToCompile()`

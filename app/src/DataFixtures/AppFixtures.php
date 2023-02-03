@@ -4,22 +4,19 @@ namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use App\Entity\Rates;
-use App\DataFixtures\Data\RateData;
+use App\Entity\Room;
+use App\DataFixtures\Data\RoomData;
 
 class AppFixtures extends Fixture
 {
-    const RATES = [
 
-    ];
 
     public function load(ObjectManager $manager): void
     {
-        foreach(RateData::get() as  $r) {
-            $rate  = (new Rates())
-                ->setName($r->name)
-                ->setIsDeleted($r->is_deleted)
-                ->setRate($r->rate)
+        foreach(RoomData::get() as  $r) {
+            $rate  = (new Room())
+                ->setType($r->type)
+                ->setRent($r->rent)
             ;
             $manager->persist($rate);
         }
