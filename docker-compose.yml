@@ -37,7 +37,7 @@ services:
     volumes:
         - mysql_hotel:/var/lib/mysql 
   react-app:
-    container_name: react-nginx1
+    container_name: react-nginx
     image: react-nginx
     build:
       context: .
