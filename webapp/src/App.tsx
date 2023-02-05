@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import Nav from './component/Nav';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './page/Home';
