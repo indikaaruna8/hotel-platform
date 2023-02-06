@@ -8,7 +8,10 @@
 Technologies : 
 - PHP
 - Symfony Framework
+- Doctrine
+- Api Platform
 - Doctrine ORM
+- React JS
 
 ## Install Pacakges
 - ./exec 'composer install'
